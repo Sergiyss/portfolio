@@ -1,0 +1,17 @@
+{
+    "navigation": {
+      "home": "Home",
+      "portfolio": "Portfolio",
+      "blog": "Blog",
+      "pricing": "Pricing",
+      "contact": "Contact",
+      "name": "Developer"
+    },
+    "home": {
+      "title": "Welcome!",
+      "description": "Welcome to my portfolio website!"
+    },
+    "hero":{
+        "title": "title"
+    }
+  }
