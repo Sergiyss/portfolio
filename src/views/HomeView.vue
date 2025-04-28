@@ -9,6 +9,7 @@
 // Управление <head> для SEO
 import { useHead } from '@vueuse/head';
 import Projects from '@/views/Projects.vue';
+import AboutMe  from "@/views/AboutMe.vue";
 import Hero from '@/views/Hero.vue';
 useHead({
   title: 'Главная | Мое Портфолио', // Динамический title
@@ -22,9 +23,8 @@ useHead({
 <template>
   <main>
     <Hero />
-    <h1>{{ $t('home.title') }}</h1> {/* Пример использования перевода */}
-    <p>Добро пожаловать на мой сайт-портфолио!</p>
     <Projects />
+    <AboutMe />
   </main>
 </template>
 

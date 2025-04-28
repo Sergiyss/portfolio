@@ -1,11 +1,9 @@
 <template>
     <section class="hero">
       <div class="container">
+        <img  class="image_hero" :src="getImageUrl('Memoji round.png')" alt="Hero Image" />
         <h1>{{ t('hero.title') }}</h1>
         <p>{{ hero.subtitle }}</p>
-        <button class="cta-button" @click="scrollToContact">
-          {{ hero.cta }}
-        </button>
       </div>
     </section>
   </template>
@@ -33,5 +31,10 @@
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  function getImageUrl(name) {
+    return new URL(`../assets/images/${name}`, import.meta.url).href;
+  }
+
   </script>
   

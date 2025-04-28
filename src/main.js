@@ -5,7 +5,10 @@ import i18n from './i18n'; // Импортируем i18n (создали ран
 import { createPinia } from 'pinia'; // Импортируем Pinia
 import { createHead } from '@vueuse/head'; // Импортируем @vueuse/head
 
-import './assets/styles/main.css'; // Основные стили
+import './assets/styles/main.css';
+import './assets/styles/desktop.css';
+import './assets/styles/table.css';
+import './assets/styles/mobile.css';
 
 const app = createApp(App);
 const pinia = createPinia(); // Создаем экземпляр Pinia
