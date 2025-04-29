@@ -1,40 +1,46 @@
 <template>
-    <section class="hero">
-      <div class="container">
-        <img  class="image_hero" :src="getImageUrl('Memoji round.png')" alt="Hero Image" />
-        <h1>{{ t('hero.title') }}</h1>
-        <p>{{ hero.subtitle }}</p>
-      </div>
-    </section>
-  </template>
-  
-  <script setup>
-  import { useI18n } from 'vue-i18n';
-  
-  const { t } = useI18n(); // подключаем $t для переводов
-  
-  const hero = {
-    get title() {
-      return t('hero.title');
-    },
-    get subtitle() {
-      return t('hero.subtitle');
-    },
-    get cta() {
-      return t('hero.cta');
-    }
-  };
-  
-  function scrollToContact() {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
+  <section class="hero">
+    <div class="container">
+      <!-- Условное отображение изображения -->
+      <img
+          v-if="showImage"
+          class="image_hero m-auto"
+          :src="getImageUrl(image)"
+          alt="Hero Image"
+      />
+      <h1>{{ title }}</h1>
+      <p>{{ subtitle }}</p>
+    </div>
+  </section>
+</template>
 
-  function getImageUrl(name) {
-    return new URL(`../assets/images/${name}`, import.meta.url).href;
-  }
+<script setup>
 
-  </script>
+import { getImageUrl } from '@/utils/helpers';
+
+
+const props = defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+  subtitle: {
+    type: String,
+    required: true,
+  },
+  cta: {
+    type: String,
+    default: 'Связаться с нами', // Значение по умолчанию
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+  showImage: {
+    type: Boolean,
+    default: true, // По умолчанию изображение будет показываться
+  }
+});
+
+</script>
   

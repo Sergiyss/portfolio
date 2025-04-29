@@ -1,61 +1,72 @@
+<script setup>
+import { ref, onMounted, computed } from 'vue';
+import { useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
+import { projects } from '@/data/projects';
+import Hero from '@/views/Hero.vue';
+import { getImageUrl } from '@/utils/helpers';
+
+const { t } = useI18n();
+const route = useRoute();
+
+const projectId = ref(null);
+const project = ref(null);
+
+onMounted(() => {
+  projectId.value = Number(route.query.id);
+  project.value = projects.find(p => p.id === projectId.value);
+
+  if (!project.value) {
+    console.log('Проект не найден!');
+  }
+});
+
+// computed заголовок
+const projectTitle = computed(() => project.value?.title ?? '');
+</script>
+
 <template>
-    <div>
-      <h1>Контактная информация</h1>
-      <p>Свяжитесь с нами через форму ниже:</p>
-      <!-- Пример контактной формы -->
-      <form>
-        <label for="name">Ваше имя:</label>
-        <input type="text" id="name" name="name" required />
-  
-        <label for="email">Ваш Email:</label>
-        <input type="email" id="email" name="email" required />
-  
-        <button type="submit">Отправить</button>
-      </form>
+  <Hero
+      title="Блог"
+      :subtitle="projectTitle"
+      image="Memoji round.png"
+      :showImage="false"
+  />
+
+  <div v-if="project">
+    <h1>{{ project.title }}</h1>
+    <img :src="`https://picsum.photos/600/350?random=${project.id}`" :alt="project.title" class="w-full rounded-md" />
+    <p>{{ project.description }}</p>
+    <div class="tags">
+      <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'ContactView',
-    data() {
-      return {
-        name: '',
-        email: ''
-      };
-    },
-    methods: {
-      submitForm() {
-        // Логика отправки формы
-      }
-    }
-  };
-  </script>
-  
-  <style scoped>
-  /* Стили для компонента */
-  form {
-    margin-top: 20px;
-  }
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  input {
-    margin-bottom: 10px;
-    padding: 8px;
-    width: 100%;
-    max-width: 300px;
-  }
-  button {
-    padding: 10px 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  button:hover {
-    background-color: #45a049;
-  }
-  </style>
-  
+  </div>
+  <div v-else>
+    <p>Проект не найден.</p>
+  </div>
+</template>
+
+
+<style scoped>
+.project {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.project h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.project img {
+  width: 100%;
+  height: auto;
+}
+.project .tags {
+  margin-top: 10px;
+}
+.project .tag {
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+</style>

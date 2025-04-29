@@ -1,16 +1,13 @@
 <script setup>
-// Можно импортировать компоненты, если нужно
-// import MyComponent from '@/components/MyComponent.vue';
+import {useI18n} from 'vue-i18n';
+const {t} = useI18n(); // подключаем $t для переводов
 
-// Используем $t для перевода (когда настроим i18n)
-// import { useI18n } from 'vue-i18n';
-// const { t } = useI18n();
 
-// Управление <head> для SEO
 import { useHead } from '@vueuse/head';
 import Projects from '@/views/Projects.vue';
 import AboutMe  from "@/views/AboutMe.vue";
 import Hero from '@/views/Hero.vue';
+import BottomBar  from "@/views/BottomBar.vue";
 useHead({
   title: 'Главная | Мое Портфолио', // Динамический title
   meta: [
@@ -22,9 +19,15 @@ useHead({
 
 <template>
   <main>
-    <Hero />
+    <Hero
+        :title="t('hero.title')"
+      :subtitle="t('hero.subtitle')"
+      image="Memoji round.png"
+      :showImage = "false"
+    />
     <Projects />
     <AboutMe />
+    <BottomBar />
   </main>
 </template>
 

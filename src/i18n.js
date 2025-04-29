@@ -12,6 +12,7 @@ function getStartingLocale() {
   return 'en'; // По умолчанию английский
 }
 
+let uk = ua; // Переименование переменной для соответствия коду
 const i18n = createI18n({
   legacy: false, // Используем Composition API
   locale: getStartingLocale(), // Язык по умолчанию
@@ -19,7 +20,7 @@ const i18n = createI18n({
   messages: { 
     en,
     ru,
-    ua,
+    uk,
   },
   globalInjection: true, // Делает $t доступным глобально
 });

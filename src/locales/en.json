@@ -1,18 +1,33 @@
 {
-    "navigation": {
-      "home": "Home",
-      "portfolio": "Portfolio",
-      "blog": "Blog",
-      "pricing": "Pricing",
-      "contact": "Contact",
-      "name": "Developer"
-    },
-    "home": {
-      "title": "Welcome!",
-      "description": "Welcome to my portfolio website!"
-    },
-    "hero":{
-        "title": "Olá, eu sou o Alê \uD83E\uDD19",
-        "subtitle": "Desenvolvo ideias e ajudo a construir um mundo melhor através do software."
-    }
+  "navigation": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "name": "Developer"
+  },
+  "home": {
+    "title": "Welcome!",
+    "description": "Welcome to my portfolio website!"
+  },
+  "hero": {
+    "title": "Hello, my name is Serhii. \uD83E\uDD19",
+    "subtitle": "I develop and maintain WordPress websites and mobile applications — from idea to launch."
+  },
+  "project": {
+    "title": "My projects"
+  },
+  "contact": {
+    "title": "Контакти",
+    "description": "Якщо у вас є питання або ви хочете обговорити проект, не соромтеся зв'язатися зі мною."
+  },
+  "obout": {
+    "title": "Про мене",
+    "description": "Hi! I'm Serhii, a passionate software developer with over 5 years of professional experience — and even more years of genuine curiosity. My journey in programming began back in 2008 with web templates and HTML/CSS, later evolving into full-stack web development with JavaScript and PHP. I’ve built custom CMS platforms, optimized and customized over 30 WordPress sites, and developed several commercial Android apps — one of which surpassed 12,000 downloads on Google Play.\n\nIn recent years, I've focused heavily on mobile development using Kotlin and Flutter, creating apps for e-commerce and AI-powered tools with ChatGPT API. I also have experience building Chrome extensions, working with microcontrollers (Arduino, ESP8266), and integrating modern AI technologies.\n\nI love turning ideas into working products — clean, efficient, and user-focused."
+  },
+  "future": {
+    "title": "Got an idea?",
+    "description": "Let’s bring it to life together!"
   }
+}

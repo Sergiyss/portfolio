@@ -25,13 +25,19 @@
         text-align: center;
         line-height: 1.1;
     }
-
+    h3.m-skills,
+    h2.about-title,
     h2.section-title {
         font-size: 96px;
         margin-bottom: 20px;
         color: var(--title-color);
         font-family: 'NunitoBold', sans-serif;
-        max-width: 100px;
+        max-width: 400px;
+        text-align: start;
         line-height: .7;
     }
+
+    /*h3.m-skills{*/
+    /*    padding-top: 30px;*/
+    /*}*/
 }

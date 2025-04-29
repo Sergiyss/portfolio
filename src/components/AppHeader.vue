@@ -63,6 +63,7 @@ const changeLanguage = (lang) => {
           <!-- Переключатель языка -->
           <select class="lang-switch" v-model="currentLanguage" @change="changeLanguage(currentLanguage)">
             <option value="ru">Русский</option>
+            <option value="uk">Українська</option>
             <option value="en">English</option>
           </select>
         </div>
