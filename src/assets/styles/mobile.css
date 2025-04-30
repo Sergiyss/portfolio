@@ -56,4 +56,13 @@
         text-align: center;
         line-height: 1.1;
     }
+
+    h2.section-title {
+        text-align: start;
+        font-size: 42px;
+        margin-bottom: 0px;
+        line-height: .4;
+        color: var(--title-color);
+        font-family: 'NunitoBold', sans-serif;
+    }
 }

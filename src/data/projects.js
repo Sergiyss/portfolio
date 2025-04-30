@@ -32,8 +32,9 @@ export  const projects = [
             
             📍 Послуга доступна в Києві та Київській області.
         `,
-        tags: ['Kotlin', 'Compose 1.3', 'XML','Retrofit 2', 'Coroutines', 'MVVM', "Room", "Google Maps", "Firebase", "BankID",],
-        image: 'project1' // сюда ставь реальный путь к изображению или заглушку
+        tags: ['Kotlin', 'Compose', 'XML','Retrofit 2', 'Coroutines', 'MVVM', "Room", "Google Maps", "Firebase", "BankID",],
+        image: 'didido.webp',
+        link: 'https://play.google.com/store/apps/details?id=com.ua.didido'
     },
     {
         id: 2,
@@ -63,8 +64,9 @@ export  const projects = [
         📌 Додаток орієнтований на патрульних поліцейських, дільничних офіцерів, поліцейських громад, а також співробітників секторів реагування. Дані є результатом аналітики законодавства України та практики його застосування, мають рекомендаційний характер.
         
         `,
-        tags: ['Kotlin', 'Compose 1.8', 'Retrofit 2', 'Coroutines', 'MVVM', "Room", "Firebase",],
-        image: 'project3'
+        tags: ['Kotlin', 'Compose', 'Retrofit 2', 'Coroutines', 'MVVM', "Room", "Firebase",],
+        image: 'kiiashko.webp',
+        link: 'https://play.google.com/store/apps/details?id=ua.dev.webnauts.kiyashko'
     },
     {
         id: 3,
@@ -98,49 +100,32 @@ export  const projects = [
 
         `,
 
-        tags: ['Kotlin', 'Compose 1.8', 'Ktor', 'Coroutines', 'MVVM', "Room", "Firebase",],
-        image: 'project2'
+        tags: ['Kotlin', 'Compose', 'Ktor', 'Coroutines', 'MVVM', "Room", "Firebase",],
+        image: 'room.webp',
+        link: 'https://play.google.com/store/apps/details?id=ua.rk'
     },
     {
         id: 4,
-        title: 'Корпоративный сайт для компании "БизнесПлюс"',
+        title: 'Ez CaRent',
         description: 'Разработка корпоративного сайта на WordPress с интеграцией CRM и расширенными возможностями SEO.',
-        tags: ['WordPress', 'CRM', 'SEO'],
-        image: 'project1' // сюда ставь реальный путь к изображению или заглушку
+        fullDescription: ``,
+        tags: ['Flutter', 'Dart', 'Bloc', 'Firebase', 'Clean Architecture', 'GetIt', 'Dio'],
+        image: 'car.webp',
+        link: 'https://play.google.com/store/apps/details?id=com.ezcarent'
     },
     {
         id: 5,
-        title: 'Интернет-магазин "Электроника+"',
+        title: 'Castle Guide',
         description: 'Разработка e-commerce платформы на WooCommerce с кастомным дизайном и системой онлайн-оплаты.',
-        tags: ['WooCommerce', 'UX/UI', 'Online Payment'],
-        image: 'project3'
+        tags: ['Kotlin', 'Compose', 'Ktor', 'Coroutines', 'MVVM', "Room", "Firebase", "Google Maps",],
+        image: 'castle.webp',
+
     },
     {
         id: 6,
-        title: 'Промо-сайт стартапа "GreenTech"',
+        title: 'Quick hub',
         description: 'Лендинг для стартапа по экологическим технологиям с фокусом на конверсию и мобильную адаптацию.',
-        tags: ['Landing Page', 'Mobile First', 'Green Energy'],
-        image: 'project2'
+        tags: ['Kotlin', 'Compose', 'Ktor', 'Coroutines', 'Clean Architecture',],
+        image: 'quick.webp',
     },
-    {
-        id: 7,
-        title: 'Корпоративный сайт для компании "БизнесПлюс"',
-        description: 'Разработка корпоративного сайта на WordPress с интеграцией CRM и расширенными возможностями SEO.',
-        tags: ['WordPress', 'CRM', 'SEO'],
-        image: 'project1' // сюда ставь реальный путь к изображению или заглушку
-    },
-    {
-        id: 8,
-        title: 'Интернет-магазин "Электроника+"',
-        description: 'Разработка e-commerce платформы на WooCommerce с кастомным дизайном и системой онлайн-оплаты.',
-        tags: ['WooCommerce', 'UX/UI', 'Online Payment'],
-        image: 'project3'
-    },
-    {
-        id: 9,
-        title: 'Промо-сайт стартапа "GreenTech"',
-        description: 'Лендинг для стартапа по экологическим технологиям с фокусом на конверсию и мобильную адаптацию.',
-        tags: ['Landing Page', 'Mobile First', 'Green Energy'],
-        image: 'project2'
-    }
 ]
