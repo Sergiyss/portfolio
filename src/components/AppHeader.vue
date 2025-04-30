@@ -51,20 +51,16 @@ const changeLanguage = (lang) => {
         <div class="menu" :class="{ 'active': menuActive }">
             <div class="desktop-menu">
                 <router-link class="menu-item"  to="/">{{ t('navigation.home') }}</router-link>
-                <router-link class="menu-item"  to="/portfolio">{{ t('navigation.portfolio') }}</router-link>
                 <router-link class="menu-item"  to="/blog">{{ t('navigation.blog') }}</router-link>
                 <router-link class="menu-item"  to="/pricing">{{ t('navigation.pricing') }}</router-link>
                 <router-link class="menu-item"   to="/contact">{{ t('navigation.contact') }}</router-link>
             </div>
-
-
 
           <div class="theme-toggle" @click="toggleTheme">
             {{ isDarkTheme ? '☀️' : '🌙' }}
           </div>
           <!-- Переключатель языка -->
           <select class="lang-switch" v-model="currentLanguage" @change="changeLanguage(currentLanguage)">
-            <option value="ru">Русский</option>
             <option value="uk">Українська</option>
             <option value="en">English</option>
           </select>

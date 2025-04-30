@@ -1,10 +1,8 @@
 <script setup>
-import { getImageUrl } from '@/utils/helpers';
-import { getSvg } from '@/utils/helpers'; // Путь к вашей функции
 
-import { useI18n } from 'vue-i18n';
-
-const { t } = useI18n(); // подключаем $t для переводов
+import {getImageUrl} from '@/utils/helpers';
+import {useI18n} from 'vue-i18n';
+const {t} = useI18n();
 
 const skills = [
   {
@@ -52,7 +50,7 @@ const skills = [
     <div class="container mx-auto px-4">
 
       <div class="relative inline-block w-50">
-        <h2 class="about-title relative z-10">{{t('obout.title')}}</h2>
+        <h2 class="about-title relative z-10">{{ t('obout.title') }}</h2>
       </div>
       <div class="flex flex-col md:flex-row items-center md:items-start gap-10 mb-16">
         <div class="md:w-1/2">
@@ -62,11 +60,21 @@ const skills = [
             </p>
           </div>
 
+          <img :src="getImageUrl('progress_git.webp')" class="object-contain pt-8"/>
+          <a
+              href="https://github.com/Sergiyss"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block mt-8 border border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white font-medium py-2 px-4 rounded transition"
+          >
+            GitHub
+          </a>
+
           <h3 class="m-skills py-8">Skills</h3>
           <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-600 text-base">
             <li v-for="(skill, index) in skills" :key="index" class="flex justify-center">
               <div class="flex flex-col items-center text-center gap-2">
-                <img :src="getImageUrl(skill.image)" :alt="skill.name" class="w-24 h-24 object-contain" />
+                <img :src="getImageUrl(skill.image)" :alt="skill.name" class="w-24 h-24 object-contain"/>
                 <span>{{ skill.name }}</span>
               </div>
             </li>
@@ -81,8 +89,3 @@ const skills = [
     </div>
   </section>
 </template>
-
-
-<style scoped>
-
-</style>

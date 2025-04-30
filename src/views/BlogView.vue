@@ -1,13 +1,13 @@
 <script setup>
-import { ref, onMounted, computed } from 'vue';
-import { useRoute } from 'vue-router';
-import { useI18n } from 'vue-i18n';
-import { projects } from '@/data/projects';
+import Projects from '@/views/Projects.vue';
+import {ref, onMounted, computed} from 'vue';
+import {useRoute} from 'vue-router';
+import {useI18n} from 'vue-i18n';
+import {projects} from '@/data/projects';
 import Hero from '@/views/Hero.vue';
 import BottomBar from '@/views/BottomBar.vue';
-import { getImageUrl } from '@/utils/helpers';
 
-const { t } = useI18n();
+const {t} = useI18n();
 const route = useRoute();
 
 const projectId = ref(null);
@@ -56,10 +56,10 @@ const projectTitle = computed(() => project.value?.title ?? '');
   </div>
 
   <div v-else class="not-found">
-    <p>Проект не найден.</p>
+    <Projects/>
   </div>
 
-  <BottomBar />
+  <BottomBar/>
 </template>
 
 
@@ -76,7 +76,7 @@ const projectTitle = computed(() => project.value?.title ?? '');
   width: 100%;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding: 2rem;
 }
 
@@ -96,7 +96,6 @@ const projectTitle = computed(() => project.value?.title ?? '');
 
 .project-description {
   font-size: 1.125rem;
-  line-height: 1.8;
   margin-bottom: 1.5rem;
   color: #333;
 }
