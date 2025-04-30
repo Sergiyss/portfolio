@@ -1,39 +1,41 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useThemeStore } from '../store/theme';
+import { setLocale } from '../i18n';
 import LanguageSwitcher from './LanguageSwitcher.vue';
 import ThemeSwitcher from './ThemeSwitcher.vue';
-import { setLocale } from '../i18n'; // Импортируем функцию для смены языка
 
-// Для работы с переводами
 const { t } = useI18n();
-
-// Управление состоянием мобильного меню
 const menuActive = ref(false);
+const currentLanguage = ref(localStorage.getItem('locale') || 'en');
 
-// Состояние текущего языка
-const currentLanguage = ref(localStorage.getItem('locale') || 'en');  // Язык по умолчанию
+// Theme store
+const themeStore = useThemeStore();
 
-// Функция для переключения темы
-const isDarkTheme = ref(false);
+const isDarkTheme = computed(() => {
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return themeStore.currentTheme === 'dark' || (themeStore.currentTheme === 'system' && systemPrefersDark);
+});
+
 const toggleTheme = () => {
-  isDarkTheme.value = !isDarkTheme.value;
+  if (themeStore.currentTheme === 'light') {
+    themeStore.setTheme('dark');
+  } else if (themeStore.currentTheme === 'dark') {
+    themeStore.setTheme('light');
+  } else {
+    // Если была выбрана "system", переключим на "dark"
+    themeStore.setTheme('dark');
+  }
 };
 
-// Функция для переключения мобильного меню
 const toggleMenu = () => {
   menuActive.value = !menuActive.value;
 };
 
-// Прокрутка к секции на странице
-const scrollToSection = (section) => {
-  document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
-};
-
-// Функция для переключения языка
 const changeLanguage = (lang) => {
-  currentLanguage.value = lang; // Обновляем текущий язык
-  setLocale(lang); // Меняем язык в i18n
+  currentLanguage.value = lang;
+  setLocale(lang);
 };
 </script>
 
@@ -56,7 +58,7 @@ const changeLanguage = (lang) => {
             </div>
 
 
-   
+
           <div class="theme-toggle" @click="toggleTheme">
             {{ isDarkTheme ? '☀️' : '🌙' }}
           </div>

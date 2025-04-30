@@ -15,8 +15,6 @@
 
 <script setup>
 import AppHeader from './components/AppHeader.vue';
-
-//import AppFooter from './components/AppFooter.vue';
 import { useThemeStore } from './store/theme';
 
 const themeStore = useThemeStore();
