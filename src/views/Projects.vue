@@ -46,8 +46,15 @@
                   </span>
 
                   <span v-if="item.link">
-                    <a :href="item.link" target="_blank" class="rounded text-white bg-amber-500 p-1 hover:underline">Play Market</a>
-                  </span>
+                <a
+                    :href="item.link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block mt-2 text-blue-600 hover:underline text-sm font-medium"
+                >
+                  Play Market →
+                </a>
+              </span>
                 </div>
               </div>
             </div>
@@ -102,14 +109,15 @@
                 </span>
 
                 <span v-if="item.link">
-                  <a
-                      :href="item.link"
-                      target="_blank"
-                      class="rounded text-white bg-amber-500 p-1 hover:underline"
-                  >
-                  {{ t('project.go_to_site') }}
+                <a
+                    :href="item.link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block mt-2 text-blue-600 hover:underline text-sm font-medium"
+                >
+                  {{ t('project.go_to_site') }} →
                 </a>
-                </span>
+              </span>
               </div>
             </div>
           </div>
@@ -121,10 +129,10 @@
 
 <script setup>
 import {ref, computed} from 'vue'
-import { projects } from '@/data/projects';
-import { web_projects } from '@/data/web_projects';
+import {projects} from '@/data/projects';
+import {web_projects} from '@/data/web_projects';
 import {useI18n} from 'vue-i18n';
-import { getImageUrl } from '@/utils/helpers';
+import {getImageUrl} from '@/utils/helpers';
 
 const {t, locale} = useI18n();
 

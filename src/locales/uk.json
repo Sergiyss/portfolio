@@ -20,6 +20,12 @@
       "title_site": "🖥️ Веб\nпроекти",
       "go_to_site": "Переглянути сайт"
     },
+    "blog": {
+      "title": "Блог",
+      "read_more": "Читати далі",
+      "other_projects": "Інші проекти",
+      "description": "My blog is a collection of articles, tutorials, and insights on web and mobile development. I share my experiences, tips, and tricks to help you navigate the world of technology."
+    },
     "contact": {
       "title": "Контакти",
       "description": "Якщо у вас є питання або ви хочете обговорити проект, не соромтеся зв'язатися зі мною."

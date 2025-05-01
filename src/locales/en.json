@@ -15,6 +15,13 @@
     "title": "Hello, my name is Serhii. \uD83E\uDD19",
     "subtitle": "I develop and maintain WordPress websites and mobile applications — from idea to launch."
   },
+  "blog": {
+    "title": "Blog",
+    "read_more" : "Read more",
+    "other_projects": "Other projects",
+    "description": "My blog is a collection of articles, tutorials, and insights on web and mobile development. I share my experiences, tips, and tricks to help you navigate the world of technology."
+  },
+
   "project": {
     "title": "My\nprojects Mobile",
     "title_site": "Web\nprojects",
