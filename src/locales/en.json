@@ -24,10 +24,86 @@
   },
   "obout": {
     "title": "Про мене",
-    "description": "Hi! I'm Serhii, a passionate software developer with over 5 years of professional experience — and even more years of genuine curiosity. My journey in programming began back in 2008 with web templates and HTML/CSS, later evolving into full-stack web development with JavaScript and PHP. I’ve built custom CMS platforms, optimized and customized over 30 WordPress sites, and developed several commercial Android apps — one of which surpassed 12,000 downloads on Google Play.\n\nIn recent years, I've focused heavily on mobile development using Kotlin and Flutter, creating apps for e-commerce and AI-powered tools with ChatGPT API. I also have experience building Chrome extensions, working with microcontrollers (Arduino, ESP8266), and integrating modern AI technologies.\n\nI love turning ideas into working products — clean, efficient, and user-focused."
+    "description": "Hi! I'm Serhii, a passionate software developer with over 5 years of professional experience — and even more years of genuine curiosity. My journey in programming began back in 2008 with web templates and HTML/CSS, later evolving into full-stack web development with JavaScript and PHP. I've built custom CMS platforms, optimized and customized over 30 WordPress sites, and developed several commercial Android apps — one of which surpassed 12,000 downloads on Google Play.\n\nIn recent years, I've focused heavily on mobile development using Kotlin and Flutter, creating apps for e-commerce and AI-powered tools with ChatGPT API. I also have experience building Chrome extensions, working with microcontrollers (Arduino, ESP8266), and integrating modern AI technologies.\n\nI love turning ideas into working products — clean, efficient, and user-focused."
   },
   "future": {
     "title": "Got an idea?",
-    "description": "Let’s bring it to life together!"
+    "description": "Let's bring it to life together!"
+  },
+  "pricing": {
+    "title": "Development Rates",
+    "subtitle": "Choose the right package for your project",
+    "web": {
+      "title": "Web Development",
+      "support": {
+        "title": "Support",
+        "description": "Basic package for maintaining existing projects",
+        "price": "from $15",
+        "features": {
+          "support": "Technical support",
+          "bugfixes": "Bug fixes",
+          "updates": "Minor updates"
+        }
+      },
+      "mvp": {
+        "title": "MVP",
+        "description": "Perfect solution for startups and new projects",
+        "price": "from $25",
+        "features": {
+          "development": "MVP development",
+          "design": "Basic design",
+          "documentation": "Technical documentation",
+          "support": "3 months of support"
+        }
+      },
+      "maximum": {
+        "title": "Maximum",
+        "description": "Full development cycle with advanced features",
+        "price": "from $35",
+        "features": {
+          "development": "Full development cycle",
+          "design": "Premium design",
+          "testing": "Testing and optimization",
+          "support": "1 year of support"
+        }
+      }
+    },
+    "mobile": {
+      "title": "Mobile Development",
+      "support": {
+        "title": "Support",
+        "description": "Basic package for maintaining existing projects",
+        "price": "from $20",
+        "features": {
+          "support": "Technical support",
+          "bugfixes": "Bug fixes",
+          "updates": "Minor updates"
+        }
+      },
+      "mvp": {
+        "title": "MVP",
+        "description": "Perfect solution for startups and new projects",
+        "price": "from $30",
+        "features": {
+          "development": "MVP development",
+          "design": "Basic design",
+          "documentation": "Technical documentation",
+          "support": "3 months of support"
+        }
+      },
+      "maximum": {
+        "title": "Maximum",
+        "description": "Full development cycle with advanced features",
+        "price": "from $40",
+        "features": {
+          "development": "Full development cycle",
+          "design": "Premium design",
+          "testing": "Testing and optimization",
+          "support": "1 year of support"
+        }
+      }
+    },
+    "contact": "Contact via Telegram",
+    "per_hour": "/hour"
   }
 }
