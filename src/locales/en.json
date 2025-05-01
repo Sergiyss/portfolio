@@ -16,7 +16,9 @@
     "subtitle": "I develop and maintain WordPress websites and mobile applications — from idea to launch."
   },
   "project": {
-    "title": "My\nprojects Mobile"
+    "title": "My\nprojects Mobile",
+    "title_site": "Web\nprojects",
+    "go_to_site": "Visit Website"
   },
   "contact": {
     "title": "Контакти",

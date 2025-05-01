@@ -108,9 +108,11 @@
       </div>
     </div>
   </div>
+  <BottomBar/>
 </template>
 
 <script setup lang="ts">
 import PricingCard from '@/components/PricingCard.vue'
+import BottomBar from '@/views/BottomBar.vue';
 </script>
   

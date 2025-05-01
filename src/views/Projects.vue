@@ -9,44 +9,44 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
         <div
             class="project-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transform transition-all duration-300"
-            v-for="(project, index) in projects"
+            v-for="(item, index) in projects"
             :key="index"
         >
           <router-link
-              :to="{ path: '/blog', query: { id: project.id } }"
+              :to="{ path: '/blog', query: { id: item.id } }"
               class="block"
           >
             <div class="card-inner">
               <img
                   class="project-img w-full h-48 object-cover"
-                  :src="getImageUrl(project.image)"
-                  :alt="project.title"
+                  :src="getImageUrl(item.image)"
+                  :alt="item.title[locale]"
               />
 
               <div class="project-content p-4">
-                <h3 class="project-title text-xl font-semibold mb-2">{{ project.title }}</h3>
+                <h3 class="project-title text-xl font-semibold mb-2">{{ item.title[locale] }}</h3>
 
                 <hr class="my-2 border-t border-gray-300"/>
 
                 <p class="project-description text-gray-700 mb-4">
-                  {{ project.description }}
+                  {{ item.description[locale] }}
                 </p>
                 <div class="project-tags mb-2">
                   <span
                       class="project-tag inline-block bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded mr-2 mb-2"
-                      v-for="(tag, tagIndex) in project.tags"
+                      v-for="(tag, tagIndex) in item.tags"
                       :key="tagIndex"
                   >
                     {{ tag }}
                   </span>
                 </div>
                 <div class="project-links flex justify-between text-blue-600 text-sm">
-                  <span v-if="project.github">
-                    <a :href="project.github" target="_blank" class="hover:underline">GitHub 🔗</a>
+                  <span v-if="item.github">
+                    <a :href="item.github" target="_blank" class="hover:underline">GitHub 🔗</a>
                   </span>
 
-                  <span v-if="project.link">
-                    <a :href="project.link" target="_blank" class="rounded text-white bg-amber-500 p-1 hover:underline">Play Market</a>
+                  <span v-if="item.link">
+                    <a :href="item.link" target="_blank" class="rounded text-white bg-amber-500 p-1 hover:underline">Play Market</a>
                   </span>
                 </div>
               </div>
@@ -62,34 +62,34 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
         <div
             class="project-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transform transition-all duration-300"
-            v-for="(project, index) in web_projects"
+            v-for="(item, index) in web_projects"
             :key="index"
         >
           <div class="card-inner">
             <img
                 class="project-img w-full h-48 object-cover"
-                :src="getImageUrl(project.image)"
-                :alt="project.title[locale]"
+                :src="getImageUrl(item.image)"
+                :alt="item.title[locale]"
             />
 
             <div class="project-content p-4">
-              <h3 class="project-title text-xl font-semibold mb-2">{{ project.title[locale] }}</h3>
+              <h3 class="project-title text-xl font-semibold mb-2">{{ item.title[locale] }}</h3>
 
               <p class="project-description text-gray-700 mb-4">
-                {{ project.description[locale] }}
+                {{ item.description[locale] }}
               </p>
 
               <hr class="my-2 border-t border-gray-300"/>
 
               <p
                   class="project-description text-gray-700 mb-4"
-                  v-html="project.fullDescription[locale].replace(/\n/g, '<br>')"
+                  v-html="item.fullDescription[locale].replace(/\n/g, '<br>')"
               />
 
               <div class="project-tags mb-2">
                 <span
                     class="project-tag inline-block bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded mr-2 mb-2"
-                    v-for="(tag, tagIndex) in project.tags"
+                    v-for="(tag, tagIndex) in item.tags"
                     :key="tagIndex"
                 >
                   {{ tag }}
@@ -97,12 +97,18 @@
               </div>
 
               <div class="project-links flex justify-between text-blue-600 text-sm">
-                <span v-if="project.github">
-                  <a :href="project.github" target="_blank" class="hover:underline">GitHub 🔗</a>
+                <span v-if="item.github">
+                  <a :href="item.github" target="_blank" class="hover:underline">GitHub 🔗</a>
                 </span>
 
-                <span v-if="project.link">
-                  <a :href="project.link" target="_blank" class="rounded text-white bg-amber-500 p-1 hover:underline">Play Market</a>
+                <span v-if="item.link">
+                  <a
+                      :href="item.link"
+                      target="_blank"
+                      class="rounded text-white bg-amber-500 p-1 hover:underline"
+                  >
+                  {{ t('project.go_to_site') }}
+                </a>
                 </span>
               </div>
             </div>
