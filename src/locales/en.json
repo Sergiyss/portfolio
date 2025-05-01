@@ -28,8 +28,21 @@
     "go_to_site": "Visit Website"
   },
   "contact": {
-    "title": "Контакти",
-    "description": "Якщо у вас є питання або ви хочете обговорити проект, не соромтеся зв'язатися зі мною."
+    "title": "Contact Information",
+    "subtitle": "Feel free to reach out through the form below:",
+    "form": {
+      "name": "Your Name",
+      "name_placeholder": "Enter your name",
+      "email": "Email Address",
+      "email_placeholder": "Enter your email",
+      "message": "Message",
+      "message_placeholder": "Type your message here",
+      "submit": "Send Message"
+    },
+    "social": {
+      "github": "GitHub",
+      "telegram": "Telegram"
+    }
   },
   "obout": {
     "title": "Про мене",

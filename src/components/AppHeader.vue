@@ -19,14 +19,9 @@ const isDarkTheme = computed(() => {
 });
 
 const toggleTheme = () => {
-  if (themeStore.currentTheme === 'light') {
-    themeStore.setTheme('dark');
-  } else if (themeStore.currentTheme === 'dark') {
-    themeStore.setTheme('light');
-  } else {
-    // Если была выбрана "system", переключим на "dark"
-    themeStore.setTheme('dark');
-  }
+  const newTheme = themeStore.currentTheme === 'light' ? 'dark' : 'light';
+  themeStore.setTheme(newTheme);
+  document.documentElement.classList.toggle('dark', newTheme === 'dark');
 };
 
 const toggleMenu = () => {
@@ -40,30 +35,69 @@ const changeLanguage = (lang) => {
 </script>
 
 <template>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">{{ t('navigation.name') }}</div>
+  <header class="bg-white dark:bg-gray-900 shadow-sm">
+    <div class="container mx-auto px-4">
+      <nav class="flex items-center justify-between h-16">
+        <div class="logo text-xl font-bold text-gray-900 dark:text-white">
+          {{ t('navigation.name') }}
+        </div>
        
-        <button class="mobile-menu-btn" @click="toggleMenu">≡</button>
+        <button 
+          class="mobile-menu-btn p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300"
+          @click="toggleMenu"
+        >
+          <span class="text-2xl">≡</span>
+        </button>
         
-        <!-- Меню для мобильных устройств -->
-        <div class="menu" :class="{ 'active': menuActive }">
-            <div class="desktop-menu">
-                <router-link class="menu-item"  to="/">{{ t('navigation.home') }}</router-link>
-                <router-link class="menu-item"  to="/blog">{{ t('navigation.blog') }}</router-link>
-                <router-link class="menu-item"  to="/pricing">{{ t('navigation.pricing') }}</router-link>
-                <router-link class="menu-item"   to="/contact">{{ t('navigation.contact') }}</router-link>
-            </div>
-
-          <div class="theme-toggle" @click="toggleTheme">
-            {{ isDarkTheme ? '☀️' : '🌙' }}
+        <div 
+          class="menu flex items-center space-x-4"
+          :class="{ 'active': menuActive }"
+        >
+          <div class="desktop-menu flex items-center space-x-6">
+            <router-link 
+              class="menu-item text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              to="/"
+            >
+              {{ t('navigation.home') }}
+            </router-link>
+            <router-link 
+              class="menu-item text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              to="/blog"
+            >
+              {{ t('navigation.blog') }}
+            </router-link>
+            <router-link 
+              class="menu-item text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              to="/pricing"
+            >
+              {{ t('navigation.pricing') }}
+            </router-link>
+            <router-link 
+              class="menu-item text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              to="/contact"
+            >
+              {{ t('navigation.contact') }}
+            </router-link>
           </div>
-          <!-- Переключатель языка -->
-          <select class="lang-switch" v-model="currentLanguage" @change="changeLanguage(currentLanguage)">
-            <option value="uk">Українська</option>
-            <option value="en">English</option>
-          </select>
+
+          <div class="flex items-center space-x-4">
+            <button 
+              class="theme-toggle p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              @click="toggleTheme"
+              :title="isDarkTheme ? t('theme.light_mode') : t('theme.dark_mode')"
+            >
+              <span class="text-xl">{{ isDarkTheme ? '☀️' : '🌙' }}</span>
+            </button>
+
+            <select 
+              class="lang-switch bg-transparent border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-1 text-gray-600 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+              v-model="currentLanguage" 
+              @change="changeLanguage(currentLanguage)"
+            >
+              <option value="uk">Українська</option>
+              <option value="en">English</option>
+            </select>
+          </div>
         </div>
       </nav>
     </div>
@@ -71,16 +105,54 @@ const changeLanguage = (lang) => {
 </template>
 
 <style scoped>
-/* Стиль для меню и переключателя */
-.lang-switch {
-  margin-left: 10px;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+/* Mobile menu styles */
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    padding: 1rem;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu.active {
+    right: 0;
+  }
+
+  .desktop-menu {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .menu-item {
+    font-size: 1.25rem;
+  }
+
+  .theme-toggle,
+  .lang-switch {
+    margin: 1rem 0;
+  }
 }
 
+/* Dark mode styles */
+.dark .menu {
+  background-color: #1a1a1a;
+}
+
+/* Animation for theme toggle */
 .theme-toggle {
-  margin-top: 10px;
-  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
 }
 </style>

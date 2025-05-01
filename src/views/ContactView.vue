@@ -1,129 +1,144 @@
 <template>
-  <div class="flex justify-center px-4 py-8 bg-[#f9f9f9]">
-  <div class="contact-container">
-      <h1 >Контактная информация</h1>
-      <p>Свяжитесь с нами через форму ниже:</p>
-      <!-- Пример контактной формы -->
-      <div class="bottom-bar-content mb-8">
-        <form @submit.prevent="handleSubmit" class="space-y-4 w-200 flex flex-col ">
-          <input
-              v-model="name"
-              type="text"
-              placeholder="Ваше имя"
-              class="w-full p-2
-                 bg-white text-black border border-gray-300
-                 dark:bg-gray-800 dark:text-white dark:border-gray-600
-                 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-          />
-          <input
-              v-model="email"
-              type="email"
-              placeholder="Ваш email"
-              class="w-full p-2
-           bg-white text-black border border-gray-300
-           dark:bg-gray-800 dark:text-white dark:border-gray-600
-           rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-          />
-          <textarea
-              v-model="message"
-              rows="3"
-              placeholder="Ваше сообщение"
-              class="w-full p-2
-           bg-white text-black border border-gray-300
-           dark:bg-gray-800 dark:text-white dark:border-gray-600
-           rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-          ></textarea>
-          <button
-              type="submit"
-              class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition w-1/3  m-auto"
-          >
-            Отправить
-          </button>
-        </form>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          {{ t('contact.title') }}
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+          {{ t('contact.subtitle') }}
+        </p>
       </div>
 
-      <div class="flex items-center gap-6 mt-2 text-gray-300">
-        <a href="https://github.com/yourprofile" target="_blank" class="flex items-center gap-2 text-gray-300  transition-all duration-300 transform hover:scale-110">
-          <i class="fab fa-github text-2xl">
-            <img :src="getImageUrl('icons8-git-50.png')" :alt="github" class="w-8 h-8 object-contain" />
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+        <div class="p-8">
+          <form @submit.prevent="handleSubmit" class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                {{ t('contact.form.name') }}
+              </label>
+              <input
+                id="name"
+                v-model="form.name"
+                type="text"
+                :placeholder="t('contact.form.name_placeholder')"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
+                  bg-white dark:bg-gray-700 text-gray-900 dark:text-white
+                  focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                  transition duration-200"
+                required
+              />
+            </div>
 
-          </i>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                {{ t('contact.form.email') }}
+              </label>
+              <input
+                id="email"
+                v-model="form.email"
+                type="email"
+                :placeholder="t('contact.form.email_placeholder')"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
+                  bg-white dark:bg-gray-700 text-gray-900 dark:text-white
+                  focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                  transition duration-200"
+                required
+              />
+            </div>
 
-          <span class="hidden sm:inline">GitHub</span>
-        </a>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                {{ t('contact.form.message') }}
+              </label>
+              <textarea
+                id="message"
+                v-model="form.message"
+                rows="4"
+                :placeholder="t('contact.form.message_placeholder')"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
+                  bg-white dark:bg-gray-700 text-gray-900 dark:text-white
+                  focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                  transition duration-200 resize-none"
+                required
+              ></textarea>
+            </div>
 
-        <!--          //#F7F7F7-->
-        <a href="https://t.me/yourprofile" target="_blank" class="flex items-center gap-2 text-gray-300  transition-all duration-300 transform hover:scale-110">
-          <i class="fab fa-github text-2xl">
-            <img :src="getImageUrl('icons8-telegram-app-50.png')" :alt="telegram" class="w-8 h-8 object-contain" />
-          </i>
-          <span class="hidden sm:inline">Telegram</span>
-        </a>
+            <div class="flex justify-center">
+              <button
+                type="submit"
+                class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg
+                  transition duration-200 transform hover:scale-105 focus:outline-none focus:ring-2
+                  focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
+              >
+                {{ t('contact.form.submit') }}
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-700 px-8 py-6">
+          <div class="flex justify-center space-x-8">
+            <a
+              href="https://github.com/yourprofile"
+              target="_blank"
+              class="flex items-center space-x-2 text-gray-600 dark:text-gray-300
+                hover:text-gray-900 dark:hover:text-white transition duration-200"
+            >
+              <img
+                :src="getImageUrl('icons8-git-50.png')"
+                :alt="t('contact.social.github')"
+                class="w-6 h-6"
+              />
+              <span class="text-sm font-medium">{{ t('contact.social.github') }}</span>
+            </a>
+
+            <a
+              href="https://t.me/yourprofile"
+              target="_blank"
+              class="flex items-center space-x-2 text-gray-600 dark:text-gray-300
+                hover:text-gray-900 dark:hover:text-white transition duration-200"
+            >
+              <img
+                :src="getImageUrl('icons8-telegram-app-50.png')"
+                :alt="t('contact.social.telegram')"
+                class="w-6 h-6"
+              />
+              <span class="text-sm font-medium">{{ t('contact.social.telegram') }}</span>
+            </a>
+          </div>
+        </div>
       </div>
-
     </div>
-    </div>
-  </template>
-  
-  <script>
-  import {getImageUrl} from "@/utils/helpers.js";
+  </div>
+</template>
 
-  export default {
-    name: 'ContactView',
-    data() {
-      return {
-        name: '',
-        email: ''
-      };
-    },
-    methods: {
-      getImageUrl,
-      submitForm() {
-        // Логика отправки формы
-      }
-    }
+<script setup>
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { getImageUrl } from '@/utils/helpers';
+
+const { t } = useI18n();
+
+const form = ref({
+  name: '',
+  email: '',
+  message: ''
+});
+
+const handleSubmit = () => {
+  // Handle form submission
+  console.log('Form submitted:', form.value);
+  // Reset form
+  form.value = {
+    name: '',
+    email: '',
+    message: ''
   };
-  </script>
-  
-  <style scoped>
-  .contact-container {
-    max-width: 920px;
-    width: 100%;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    padding: 2rem;
-  }
+};
+</script>
 
-
-
-
-  /* Стили для компонента */
-  form {
-    margin-top: 20px;
-  }
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  input {
-    margin-bottom: 10px;
-    padding: 8px;
-    width: 100%;
-    max-width: 300px;
-  }
-  button {
-    padding: 10px 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  button:hover {
-    background-color: #45a049;
-  }
-  </style>
+<style scoped>
+/* Add any custom styles here if needed */
+</style>
   
