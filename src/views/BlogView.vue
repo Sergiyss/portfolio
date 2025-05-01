@@ -1,6 +1,7 @@
 <script setup>
 import Projects from '@/views/Projects.vue';
-import {ref, onMounted, computed} from 'vue';
+import { watch } from 'vue'
+import { ref, computed } from 'vue';
 import {useRoute} from 'vue-router';
 import {useI18n} from 'vue-i18n';
 import {projects} from '@/data/projects';
@@ -13,14 +14,19 @@ const route = useRoute();
 const projectId = ref(null);
 const project = ref(null);
 
-onMounted(() => {
-  projectId.value = Number(route.query.id);
-  project.value = projects.find(p => p.id === projectId.value);
 
-  if (!project.value) {
-    console.log('Проект не найден!');
-  }
-});
+watch(
+    () => route.query.id,
+    (newId) => {
+      projectId.value = Number(newId);
+      project.value = projects.find(p => p.id === projectId.value);
+
+      if (!project.value) {
+        console.log('Проект не найден!');
+      }
+    },
+    { immediate: true }
+)
 
 // computed заголовок
 const projectTitle = computed(() => project.value?.title ?? '');
