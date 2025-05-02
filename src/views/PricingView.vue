@@ -1,14 +1,14 @@
 <template>
-  <div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <div class="text-center">
-        <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl">{{ $t('pricing.title') }}</h1>
+        <h1 class="text-4xl title font-bold text-gray-900 sm:text-5xl">{{ $t('pricing.title') }}</h1>
         <p class="mt-4 text-xl text-gray-600">{{ $t('pricing.subtitle') }}</p>
       </div>
 
       <!-- Web Development Section -->
       <div class="mt-16">
-        <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">{{ $t('pricing.web.title') }}</h2>
+        <h2 class="text-3xl font-bold text-center title mb-8">{{ $t('pricing.web.title') }}</h2>
         <div class="grid gap-8 lg:grid-cols-3">
           <PricingCard
             :title="$t('pricing.web.support.title')"
@@ -51,7 +51,7 @@
 
       <!-- Mobile Development Section -->
       <div class="mt-16">
-        <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">{{ $t('pricing.mobile.title') }}</h2>
+        <h2 class="text-3xl font-bold text-center title mb-8">{{ $t('pricing.mobile.title') }}</h2>
         <div class="grid gap-8 lg:grid-cols-3">
           <PricingCard
             :title="$t('pricing.mobile.support.title')"

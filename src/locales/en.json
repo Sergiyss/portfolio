@@ -60,7 +60,7 @@
       "support": {
         "title": "Support",
         "description": "Basic package for maintaining existing projects",
-        "price": "from $15",
+        "price": "from $4.8",
         "features": {
           "support": "Technical support",
           "bugfixes": "Bug fixes",
@@ -70,7 +70,7 @@
       "mvp": {
         "title": "MVP",
         "description": "Perfect solution for startups and new projects",
-        "price": "from $25",
+        "price": "from $3.8",
         "features": {
           "development": "MVP development",
           "design": "Basic design",
@@ -81,7 +81,7 @@
       "maximum": {
         "title": "Maximum",
         "description": "Full development cycle with advanced features",
-        "price": "from $35",
+        "price": "from $3.5",
         "features": {
           "development": "Full development cycle",
           "design": "Premium design",
@@ -95,7 +95,7 @@
       "support": {
         "title": "Support",
         "description": "Basic package for maintaining existing projects",
-        "price": "from $20",
+        "price": "from $6.75",
         "features": {
           "support": "Technical support",
           "bugfixes": "Bug fixes",
@@ -105,7 +105,7 @@
       "mvp": {
         "title": "MVP",
         "description": "Perfect solution for startups and new projects",
-        "price": "from $30",
+        "price": "from $6",
         "features": {
           "development": "MVP development",
           "design": "Basic design",
@@ -116,16 +116,15 @@
       "maximum": {
         "title": "Maximum",
         "description": "Full development cycle with advanced features",
-        "price": "from $40",
+        "price": "from $5.5",
         "features": {
           "development": "Full development cycle",
-          "design": "Premium design",
           "testing": "Testing and optimization",
           "support": "1 year of support"
         }
       }
     },
     "contact": "Contact via Telegram",
-    "per_hour": "/hour"
+    "per_hour": " / hour"
   }
 }

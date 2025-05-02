@@ -14,7 +14,7 @@
         <div class="p-8">
           <form @submit.prevent="handleSubmit" class="space-y-6">
             <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                 {{ t('contact.form.name') }}
               </label>
               <input
@@ -23,15 +23,15 @@
                 type="text"
                 :placeholder="t('contact.form.name_placeholder')"
                 class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
-                  bg-white dark:bg-gray-700 text-gray-900 dark:text-white
+                  bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100
                   focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                  transition duration-200"
+                  transition duration-200 placeholder-gray-500 dark:placeholder-gray-400"
                 required
               />
             </div>
 
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                 {{ t('contact.form.email') }}
               </label>
               <input
@@ -40,15 +40,15 @@
                 type="email"
                 :placeholder="t('contact.form.email_placeholder')"
                 class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
-                  bg-white dark:bg-gray-700 text-gray-900 dark:text-white
+                  bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100
                   focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                  transition duration-200"
+                  transition duration-200 placeholder-gray-500 dark:placeholder-gray-400"
                 required
               />
             </div>
 
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                 {{ t('contact.form.message') }}
               </label>
               <textarea
@@ -57,9 +57,9 @@
                 rows="4"
                 :placeholder="t('contact.form.message_placeholder')"
                 class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
-                  bg-white dark:bg-gray-700 text-gray-900 dark:text-white
+                  bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100
                   focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                  transition duration-200 resize-none"
+                  transition duration-200 resize-none placeholder-gray-500 dark:placeholder-gray-400"
                 required
               ></textarea>
             </div>
@@ -77,7 +77,7 @@
           </form>
         </div>
 
-        <div class="bg-gray-50 dark:bg-gray-700 px-8 py-6">
+        <div class="bg-gray-50 dark:bg-gray-700/50 px-8 py-6">
           <div class="flex justify-center space-x-8">
             <a
               href="https://github.com/yourprofile"
@@ -114,16 +114,30 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useThemeStore } from '@/store/theme';
 import { getImageUrl } from '@/utils/helpers';
 
 const { t } = useI18n();
+const themeStore = useThemeStore();
 
 const form = ref({
   name: '',
   email: '',
   message: ''
+});
+
+// Watch for theme changes to ensure proper reactivity
+watch(() => themeStore.currentTheme, () => {
+  // Force a re-render of the component when theme changes
+  // This ensures all dark mode classes are properly applied
+  const html = document.documentElement;
+  if (themeStore.currentTheme === 'dark') {
+    html.classList.add('dark');
+  } else {
+    html.classList.remove('dark');
+  }
 });
 
 const handleSubmit = () => {

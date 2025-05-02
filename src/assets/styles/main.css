@@ -26,29 +26,117 @@
     --primary-color: #4169e1;
     --secondary-color: #78a9ff;
     --text-color: #333;
+    --dk-text-color: #e9e9e9;
     --bg-color: #fff;
+    --dk-card-bg: #1e1e1e;
     --card-bg: #f8f8f8;
+    --dk-br-color-card: #ccc;
     --title-color: #111827;
+    --section-obout-bg: #f1f1f1;
+    --dk-section-obout-bg: #313027;
+
+    --dk-title-color: #e9e9e9;
     --border-color: #eaeaea;
+
+    --dk-link-color: #91a7ff;
+    --dk-link-hover: #748ffc;
+
+
+    --dk-tag-bg: rgba(92, 124, 250, 0.2);
+    --dk-tag-text: #cdd4ff;
+
+    --dk-bg-body: #1f1b16;
+    --dk-title-color: #f1e7d0;
+
 }
 
-[data-theme="dark"] {
-    --primary-color: #5c7cfa;
-    --secondary-color: #3b5bdb;
-    --text-color: #e9e9e9;
-    --title-color: #e9e9e9;
-    --bg-color: #e9e9e9;
-    --card-bg: #1e1e1e;
-    --border-color: #2d2d2d;
+body,
+.project-card,
+.project-title,
+.project-description,
+.section-obout a,
+.project-link,
+.project-tag,
+.title,
+.hero,
+.section-obout,
+.section-obout span,
+.section-obout p,
+.hero .container p,
+.hero .container h1 {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/** {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    box-sizing: border-box;*/
-/*    transition: background-color 0.3s, color 0.3s;*/
-/*}*/
+/* Дополнительно для фона с градиентом */
+.hero {
+    transition: background 0.5s ease;
+}
+.dark .other-projects-grid a.other-project-card,
+.dark .project-content,
+.dark .project-card{
+    background-color: var(--dk-card-bg);
+    border-color: var(--dk-br-color-card);
+}
+.dark .other-projects-grid a.other-project-card p{
+    color: var(--dk-text-color)
+}
+.dark .other-projects-grid a.other-project-card h3,
+.dark .project-title{
+    color: var(--dk-title-color);
+}
+.dark .project-description{
+    color: var(--dk-title-color);
+}
+.dark .section-obout a,
+.dark .other-projects .other-projects-grid a,
+.dark .project-link{
+    color: var(--dk-link-color);
+}
+.dark .project-content .tags .tag,
+.dark .project-tag{
+    background-color: var(--dk-tag-bg);
+    color: var(--dk-tag-text);
+}
+.dark h1 .title,
+.dark h2 .title,
+.dark h3 .title,
+.dark .title{
+    color: var(--dk-title-color);
+}
+.dark body{
+    background-color: var(--dk-bg-body);
+}
+.dark .hero {
+    background: linear-gradient(77deg, #3b2f22 0%, #4e4436 100%);
+}
+.dark .section-obout span,
+.dark .section-obout p,
+.dark .project-card p,
+.dark .hero .container p {
+    color: var(--dk-title-color);
+}
+.dark .hero .container h1 {
+    color: var(--dk-text-color);
+}
+.dark .section-obout {
+    background: var(--dk-section-obout-bg);
+}
 
+.dark .project-card .price-container .price{
+    color: var(--dk-link-color);
+}
+.dark .project-card .price-container .price-pre-hour{
+    color: oklch(0.943 0 89.876);
+}
+
+
+
+.project-card .price-container .price{
+    color: oklch(21% 0.034 264.665);
+}
+.project-card .price-container .price-pre-hour{
+    color: oklch(55.1% 0.027 264.364);
+}
 
 footer.bottom-bar {
     background: #111827;
@@ -59,6 +147,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-color);
     background-color: var(--bg-color);
+}
+
+.section-obout{
+    background: var(--section-obout-bg);
 }
 
 .obout-description{

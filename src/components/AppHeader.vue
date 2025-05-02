@@ -35,7 +35,7 @@ const changeLanguage = (lang) => {
 </script>
 
 <template>
-  <header class="bg-white dark:bg-gray-900 shadow-sm">
+  <header class="app-header bg-white dark:bg-gray-900 shadow-sm">
     <div class="container mx-auto px-4">
       <nav class="flex items-center justify-between h-16">
         <div class="logo text-xl font-bold text-gray-900 dark:text-white">
@@ -143,9 +143,19 @@ const changeLanguage = (lang) => {
 }
 
 /* Dark mode styles */
+.dark .app-header,
 .dark .menu {
-  background-color: #1a1a1a;
+  background-color: #2e2b25;
 }
+
+.dark .menu-item {
+  color: #e0e0e0;
+}
+.dark p,
+.dark .logo{
+  color : #f1e7d0
+}
+
 
 /* Animation for theme toggle */
 .theme-toggle {

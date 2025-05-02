@@ -2,7 +2,7 @@
   <section class="projects" id="projects">
     <div class="container mx-auto px-4 py-8">
       <h2
-          class="section-title text-center pt-8"
+          class="section-title title text-center pt-8"
           v-html="t('project.title').replace(/\n/g, '<br>')"
       />
 
@@ -24,7 +24,7 @@
               />
 
               <div class="project-content p-4">
-                <h3 class="project-title text-xl font-semibold mb-2">{{ item.title[locale] }}</h3>
+                <h3 class="project-title title text-xl font-semibold mb-2">{{ item.title[locale] }}</h3>
 
                 <hr class="my-2 border-t border-gray-300"/>
 
@@ -50,7 +50,7 @@
                     :href="item.link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-block mt-2 text-blue-600 hover:underline text-sm font-medium"
+                    class="project-link inline-block mt-2 text-blue-600 hover:underline text-sm font-medium"
                 >
                   Play Market →
                 </a>
@@ -63,7 +63,7 @@
       </div>
 
       <h2
-          class="section-title text-center pt-8"
+          class="section-title title text-center pt-8"
           v-html="t('project.title_site').replace(/\n/g, '<br>')"
       />
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
@@ -113,7 +113,7 @@
                     :href="item.link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-block mt-2 text-blue-600 hover:underline text-sm font-medium"
+                    class="project-link inline-block mt-2 text-blue-600 hover:underline text-sm font-medium"
                 >
                   {{ t('project.go_to_site') }} →
                 </a>

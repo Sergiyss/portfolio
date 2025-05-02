@@ -2,6 +2,7 @@
 
 import {getImageUrl} from '@/utils/helpers';
 import {useI18n} from 'vue-i18n';
+
 const {t} = useI18n();
 
 const skills = [
@@ -46,11 +47,11 @@ const skills = [
 </script>
 
 <template>
-  <section class="py-16 bg-gray-100" id="about-me">
+  <section class="py-16 section-obout" id="about-me">
     <div class="container mx-auto px-4">
 
       <div class="relative inline-block w-50">
-        <h2 class="about-title relative z-10">{{ t('obout.title') }}</h2>
+        <h2 class="about-title title relative z-10">{{ t('obout.title') }}</h2>
       </div>
       <div class="flex flex-col md:flex-row items-center md:items-start gap-10 mb-16">
         <div class="md:w-1/2">
@@ -70,7 +71,7 @@ const skills = [
             GitHub
           </a>
 
-          <h3 class="m-skills py-8">Skills</h3>
+          <h3 class="m-skills title py-8">Skills</h3>
           <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-600 text-base">
             <li v-for="(skill, index) in skills" :key="index" class="flex justify-center">
               <div class="flex flex-col items-center text-center gap-2">

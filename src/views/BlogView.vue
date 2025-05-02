@@ -68,7 +68,7 @@ const projectTitle = computed(() => project.value?.title ?? {});
 
     <!-- Other Projects Section -->
     <div class="other-projects">
-      <h2 class="other-projects-title">{{ t('blog.other_projects') }}</h2>
+      <h2 class="other-projects-title title">{{ t('blog.other_projects') }}</h2>
       <div class="other-projects-grid">
         <router-link
             v-for="otherProject in otherProjects"
@@ -110,7 +110,6 @@ const projectTitle = computed(() => project.value?.title ?? {});
   flex-direction: column;
   align-items: center;
   padding: 2rem 1rem;
-  background-color: #f9f9f9;
   gap: 2rem;
 }
 

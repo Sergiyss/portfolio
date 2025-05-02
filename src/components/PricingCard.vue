@@ -1,20 +1,20 @@
 <template>
   <div
-    class="bg-white rounded-2xl shadow-lg overflow-hidden relative"
+    class="project-card rounded-2xl shadow-lg overflow-hidden relative"
     :class="{ 'border-2 border-blue-500 transform scale-105': isPopular }"
   >
-    <div class="px-6 py-8">
+    <div class="px-6 py-8 price-container">
       <div
         v-if="isPopular"
         class="absolute top-0 right-0 bg-blue-500 text-white px-4 py-1 rounded-tl-lg"
       >
         {{ $t('pricing.popular') }}
       </div>
-      <h3 class="text-2xl font-semibold text-gray-900">{{ title }}</h3>
+      <h3 class="text-2xl title font-semibold text-gray-900">{{ title }}</h3>
       <p class="mt-4 text-gray-600">{{ description }}</p>
       <div class="mt-6">
-        <span class="text-4xl font-bold text-gray-900">{{ price }}</span>
-        <span class="text-gray-500">{{ perHour }}</span>
+        <span class="text-4xl font-bold price">{{ price }}</span>
+        <span class="price-pre-hour">{{ perHour }}</span>
       </div>
       <ul class="mt-8 space-y-4">
         <li v-for="feature in features" :key="feature" class="flex items-center">
