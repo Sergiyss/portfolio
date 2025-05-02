@@ -1,8 +1,8 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-12">
-        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        <h1 class="text-3xl title font-bold mb-4">
           {{ t('contact.title') }}
         </h1>
         <p class="text-lg text-gray-600 dark:text-gray-300">
@@ -10,7 +10,7 @@
         </p>
       </div>
 
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="bg-white project-card rounded-xl shadow-lg overflow-hidden">
         <div class="p-8">
           <form @submit.prevent="handleSubmit" class="space-y-6">
             <div>
@@ -23,7 +23,7 @@
                 type="text"
                 :placeholder="t('contact.form.name_placeholder')"
                 class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
-                  bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100
+                   bg-contact-form
                   focus:ring-2 focus:ring-blue-500 focus:border-transparent
                   transition duration-200 placeholder-gray-500 dark:placeholder-gray-400"
                 required
@@ -40,7 +40,7 @@
                 type="email"
                 :placeholder="t('contact.form.email_placeholder')"
                 class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
-                  bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100
+                  bg-contact-form
                   focus:ring-2 focus:ring-blue-500 focus:border-transparent
                   transition duration-200 placeholder-gray-500 dark:placeholder-gray-400"
                 required
@@ -57,7 +57,7 @@
                 rows="4"
                 :placeholder="t('contact.form.message_placeholder')"
                 class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
-                  bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100
+                  bg-contact-form
                   focus:ring-2 focus:ring-blue-500 focus:border-transparent
                   transition duration-200 resize-none placeholder-gray-500 dark:placeholder-gray-400"
                 required
@@ -77,7 +77,7 @@
           </form>
         </div>
 
-        <div class="bg-gray-50 dark:bg-gray-700/50 px-8 py-6">
+        <div class=" px-8 py-6">
           <div class="flex justify-center space-x-8">
             <a
               href="https://github.com/yourprofile"

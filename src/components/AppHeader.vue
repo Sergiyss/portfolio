@@ -53,7 +53,7 @@ const changeLanguage = (lang) => {
           class="menu flex items-center space-x-4"
           :class="{ 'active': menuActive }"
         >
-          <div class="desktop-menu flex items-center space-x-6">
+          <div class="desktop-menu flex md:flex-wrap items-center space-x-6">
             <router-link 
               class="menu-item text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               to="/"
@@ -106,41 +106,7 @@ const changeLanguage = (lang) => {
 
 <style scoped>
 /* Mobile menu styles */
-@media (max-width: 768px) {
-  .menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh;
-    background-color: white;
-    padding: 1rem;
-    transition: right 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 
-  .menu.active {
-    right: 0;
-  }
-
-  .desktop-menu {
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .menu-item {
-    font-size: 1.25rem;
-  }
-
-  .theme-toggle,
-  .lang-switch {
-    margin: 1rem 0;
-  }
-}
 
 /* Dark mode styles */
 .dark .app-header,

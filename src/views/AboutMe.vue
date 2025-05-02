@@ -50,11 +50,12 @@ const skills = [
   <section class="py-16 section-obout" id="about-me">
     <div class="container mx-auto px-4">
 
-      <div class="relative inline-block w-50">
-        <h2 class="about-title title relative z-10">{{ t('obout.title') }}</h2>
-      </div>
-      <div class="flex flex-col md:flex-row items-center md:items-start gap-10 mb-16">
+      <div class="flex flex-col md:flex-row md:justify-around  md:items-start gap-10 mb-16">
         <div class="md:w-1/2">
+          <div class="relative inline-block w-50">
+            <h2 class="about-title title relative z-10">{{ t('obout.title') }}</h2>
+          </div>
+
           <div class="space-y-6 text-gray-700 text-lg leading-relaxed">
             <p class="obout-description" v-for="(paragraph, index) in t('obout.description').split('\n')" :key="index">
               {{ paragraph }}
@@ -70,9 +71,9 @@ const skills = [
           >
             GitHub
           </a>
-
-          <h3 class="m-skills title py-8">Skills</h3>
-          <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-600 text-base">
+        </div>
+        <div>
+          <ul class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-gray-600 text-base">
             <li v-for="(skill, index) in skills" :key="index" class="flex justify-center">
               <div class="flex flex-col items-center text-center gap-2">
                 <img :src="getImageUrl(skill.image)" :alt="skill.name" class="w-24 h-24 object-contain"/>
@@ -80,11 +81,6 @@ const skills = [
               </div>
             </li>
           </ul>
-
-        </div>
-
-        <div class="md:w-1/2 flex justify-center">
-          <img :src="getImageUrl('Image.png')" alt="Image" class="max-w-2xs h-auto">
         </div>
       </div>
     </div>
