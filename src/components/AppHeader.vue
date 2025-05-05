@@ -57,24 +57,28 @@ const changeLanguage = (lang) => {
             <router-link 
               class="menu-item text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               to="/"
+              @click="menuActive = false"
             >
               {{ t('navigation.home') }}
             </router-link>
             <router-link 
               class="menu-item text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               to="/blog"
+              @click="menuActive = false"
             >
               {{ t('navigation.blog') }}
             </router-link>
             <router-link 
               class="menu-item text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               to="/pricing"
+              @click="menuActive = false"
             >
               {{ t('navigation.pricing') }}
             </router-link>
             <router-link 
               class="menu-item text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               to="/contact"
+              @click="menuActive = false"
             >
               {{ t('navigation.contact') }}
             </router-link>

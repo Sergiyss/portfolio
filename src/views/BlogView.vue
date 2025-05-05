@@ -56,9 +56,8 @@ const projectTitle = computed(() => project.value?.title ?? {});
 
       <h1 class="project-title">{{ project.title[locale] }}</h1>
       <div class="project-description">
-        <p v-for="(paragraph, index) in project.fullDescription[locale].split('\n')" :key="index">
-          {{ paragraph }}
-        </p>
+
+        <div class="project-description" v-html="project.fullDescription[locale]"></div>
       </div>
 
       <div class="tags">

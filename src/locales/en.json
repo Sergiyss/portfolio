@@ -55,6 +55,7 @@
   "pricing": {
     "title": "Development Rates",
     "subtitle": "Choose the right package for your project",
+    "popular": "Popular Packages",
     "web": {
       "title": "Web Development",
       "support": {

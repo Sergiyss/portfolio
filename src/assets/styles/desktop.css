@@ -27,7 +27,7 @@
     h3.m-skills,
     h2.about-title,
     h2.section-title {
-        font-size: 96px;
+        font-size: 72px;
         margin-bottom: 20px;
         color: var(--title-color);
         font-family: 'NunitoBold', sans-serif;
