@@ -73,47 +73,57 @@ body,
 .hero {
     transition: background 0.5s ease;
 }
+
 .dark .other-projects-grid a.other-project-card,
 .dark .project-content,
-.dark .project-card{
+.dark .project-card {
     background-color: var(--dk-card-bg);
     border-color: var(--dk-br-color-card);
 }
-.dark .other-projects-grid a.other-project-card p{
+
+.dark .other-projects-grid a.other-project-card p {
     color: var(--dk-text-color)
 }
+
 .dark .other-projects-grid a.other-project-card h3,
-.dark .project-title{
+.dark .project-title {
     color: var(--dk-title-color);
 }
-.dark .project-description{
+
+.dark .project-description {
     color: var(--dk-title-color);
 }
+
 .dark .section-obout a,
 .dark .other-projects .other-projects-grid a,
-.dark .project-link{
+.dark .project-link {
     color: var(--dk-link-color);
 }
+
 .dark .project-content .tags .tag,
-.dark .project-tag{
+.dark .project-tag {
     background-color: var(--dk-tag-bg);
     color: var(--dk-tag-text);
 }
+
 .dark h1 .title,
 .dark h2 .title,
 .dark h3 .title,
-.dark .title{
+.dark .title {
     color: var(--dk-title-color);
 }
-.dark body{
+
+.dark body {
     background-color: var(--dk-bg-body);
 }
+
 .dark button.theme-toggle,
 .dark select,
 .dark .hero {
     background: linear-gradient(77deg, #3b2f22 0%, #4e4436 100%);
     color: var(--dk-text-color);
 }
+
 .dark .mobile-menu-btn,
 .dark .section-obout span,
 .dark .section-obout p,
@@ -121,33 +131,39 @@ body,
 .dark .hero .container p {
     color: var(--dk-title-color);
 }
+
 .dark .hero .container h1 {
     color: var(--dk-text-color);
 }
+
 .dark .section-obout {
     background: var(--dk-section-obout-bg);
 }
 
-.dark .project-card .price-container .price{
+.dark .project-card .price-container .price {
     color: var(--dk-link-color);
 }
-.dark .project-card .price-container .price-pre-hour{
+
+.dark .project-card .price-container .price-pre-hour {
     color: oklch(0.943 0 89.876);
 }
-.dark label{
+
+.dark label {
     color: var(--dk-title-color);
 }
+
 .dark textarea,
-.dark input{
+.dark input {
     color: var(--dk-text-color);
     background: var(--dk-bg-contact-form);
 }
 
 
-.project-card .price-container .price{
+.project-card .price-container .price {
     color: oklch(21% 0.034 264.665);
 }
-.project-card .price-container .price-pre-hour{
+
+.project-card .price-container .price-pre-hour {
     color: oklch(55.1% 0.027 264.364);
 }
 
@@ -162,11 +178,11 @@ body {
     background-color: var(--bg-color);
 }
 
-.section-obout{
+.section-obout {
     background: var(--section-obout-bg);
 }
 
-.obout-description{
+.obout-description {
     font-size: 18px;
     color: var(--text-color);
     font-family: 'NunitoRegular', sans-serif;
@@ -185,7 +201,7 @@ header {
     top: 0;
     z-index: 1000;
     background-color: var(--bg-color);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -242,7 +258,7 @@ nav {
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 section {
@@ -310,7 +326,7 @@ section h2 {
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .project-img {
@@ -440,7 +456,7 @@ footer {
         right: 0;
         background-color: var(--bg-color);
         padding: 20px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
     .menu.active {
@@ -494,7 +510,7 @@ footer {
 
 /* Для активной ссылки */
 .router-link-active {
-    color:var(--primary-color);
+    color: var(--primary-color);
 }
 
 /* Эффект подчеркивания при наведении */
